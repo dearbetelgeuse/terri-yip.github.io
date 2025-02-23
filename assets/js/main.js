@@ -5,6 +5,33 @@
 */
 
 (function($) {
+
+	
+	document.addEventListener("DOMContentLoaded", function () {
+		const waveText = document.querySelector(".wave-text");
+
+		if (waveText) {
+			let observer = new IntersectionObserver(
+				function (entries) {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add("appear"); // Add appear class when visible
+						} else {
+							entry.target.classList.remove("appear"); // Remove appear class when out of view
+						}
+					});
+				},
+				{ root: null, rootMargin: "0px", threshold: 0.3 } // Triggers when 30% visible
+			);
+
+			observer.observe(waveText);
+		}
+	});
+
+
+
+
+
 	document.addEventListener("DOMContentLoaded", function () {
 		var typed = new Typed("#typewriter", {
 		  strings: [

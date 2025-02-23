@@ -7,6 +7,39 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+/* Wave fade in effect */
+.wave-text {
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: center;
+    display: block;
+    width: 100%;
+    opacity: 0; /* Starts hidden */
+    transform: translateY(20px); /* Smooth slide-up effect */
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out, background 1.5s ease-in, -webkit-text-fill-color 1.5s ease-in;
+    
+    /* Initial Metallic Gradient */
+    background: linear-gradient(90deg, #b0b0b0, #888888, #666666, #1e252b);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Starts as transparent text */
+}
+
+/* When in view, fade in and transition to solid black */
+.wave-text.appear {
+    opacity: 1;
+    transform: translateY(0);
+    
+    /* Transition the text to solid black */
+    -webkit-text-fill-color: #1e252b;
+    background: none; /* Removes gradient after appearing */
+}
+
+
+
+
+
+
 
 /* Chat Bubble Container - Stretches Across */
 .chat-container {
